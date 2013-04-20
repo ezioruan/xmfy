@@ -13,6 +13,7 @@ import thread
 
 if __name__ == '__main__':
     while True:
+        print now
         now =  datetime.datetime.now()
         time.sleep(1)
         hour = str(now).split()[1]
