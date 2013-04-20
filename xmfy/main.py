@@ -7,7 +7,9 @@ Created on 2013-4-19
 '''
 
 from bespeak import test_despeak
-
+import time
 
 if __name__ == '__main__':
-    test_despeak()
+    for i in range(100):
+        test_despeak()
+        time.sleep(1)
