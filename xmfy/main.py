@@ -13,8 +13,8 @@ import thread
 
 if __name__ == '__main__':
     while True:
-        print now
         now =  datetime.datetime.now()
+        print now
         time.sleep(1)
         hour = str(now).split()[1]
         if hour.startswith('19:58:00') or hour.startswith('19:59') or hour.startswith('20:00'):
