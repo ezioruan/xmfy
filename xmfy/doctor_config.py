@@ -9,7 +9,8 @@ Created on 2013-4-19
 
 XMFY_URL = 'http://www.xmfybj.cn/yy/' #预约系统主页
 XMFY_CHOOSE_DESPEAK_URL = 'http://www.xmfybj.cn/yy/mainP.asp' #选择医生和时间进入预约系统
-DESPEAK_URL = 'http://www.xmfybj.cn/yy/login.asp' #预约界面
+XMFY_DESPEAK_URL = 'http://www.xmfybj.cn/yy/login.asp' #预约界面
+XMFY_DESPEAK_FORM_URL = 'http://www.xmfybj.cn/yy/loginchk.asp' #预约表单提交
 
 
 ALL_DOCTORS = {
