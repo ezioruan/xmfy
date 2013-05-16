@@ -18,7 +18,7 @@ if __name__ == '__main__':
         time.sleep(1)
         hour = str(now).split()[1]
         if hour.startswith('19:58:00') or hour.startswith('19:59') or hour.startswith('20:00'):
-             for i in range(10):
-                 thread.start_new_thread(test_despeak,())
+             if test_despeak():
+                 break
         elif hour.startswith('00:00'):
             break
