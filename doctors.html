@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0021)http://yy.xmfybj.cn/# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>网络预约挂号系统</title>
+    <link href="./网络预约挂号系统_files/common.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="./网络预约挂号系统_files/jquery-1.4.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./网络预约挂号系统_files/check.js"></script>
+    <script language="javascript" type="text/javascript">
+      window.onload = function() 
+{
+  var olink = document.links; 
+  for(var i=0;i<olink.length;i++) 
+  { 
+    olink[i].onmouseover=function(){window.status='';return true;} 
+    olink[i].onfocus=function(){window.status='';return true;} 
+  }
+  addOption()
+}
+</script>
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  DD_belatedPNG.fix('div.main,div.cmain,div.h-nobg,div.tit-bg,div.b-head,div.nav_title');
+</script>
+<![endif]-->
+<script type="text/javascript">
+  //加入收藏
+function addFavorite(url, title) {
+  try {
+    window.external.addFavorite(url, title);
+  } catch (e){
+    try {
+      window.sidebar.addPanel(title, url, '');
+    } catch (e) {
+      alert("请按 Ctrl+D 键添加到收藏夹");
+    }
+  }
+}
+//设为首页
+function setHomepage(sURL) {
+  if($.browser.msie){
+    document.body.style.behavior = 'url(#default#homepage)';
+    document.body.setHomePage(sURL);
+  } else {
+    alert("非 IE 浏览器请手动将本站设为首页");
+  }
+}
+//子导航的显示
+function show_child(obj,status){
+  var affectObj = $(obj).find('.ch-li');
+  if(status==0){
+    affectObj.show();
+  }else{
+    affectObj.hide();
+  }
+}
+function getid(y){
+  return document.getElementById(y);
+}
+function c(t){
+  var l=getid(t);
+  if(l.style.display=="block"){
+    l.style.display="none";
+  }else{
+    //iframe
+    window.open("alldoctor.html","MainHome");
+    l.style.display="block";
+  }
+}
+</script>
+</head>
+
+<body class="body">
+  <div class="main">
+    <!--Logo栏-->
+    <div class="l-main">
+      <div class="width auto">
+        <div class="logo t-rig fo-12">
+          <div class="l-label">
+            <a hidefocus="true" href="javascript:setHomepage(document.location.href);">设为首页</a> | 
+            <a hidefocus="true" href="javascript:addFavorite(document.location.href, document.title);">加入收藏</a> | 
+            <a hidefocus="true" href="https://220.160.106.91:4343/">OA入口</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--导航栏-->
+    <div class="width auto">
+      <div class="nav t-cen col-ff fo-14 rel">
+        <div class="hli left b">
+          <a href="http://www.xmfybj.cn/" hidefocus="true">首页</a>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">走进妇幼</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/summary.html">医院概况</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/history.html">领导核心</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/honor.html">机构设置</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/impression.html">医院荣誉</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">名科名医</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/doctor/index/ch/lc.html">临床</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/doctor/index/ch/bj.html">保健</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/doctor/index/ch/yj.html">医药技</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">就医指南</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/notice.html">门诊预约须知</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/traffic.html">交通指南</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/floor.html">楼层分布</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/jzlc.html">就诊流程</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/tjzn.html">体检指南</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">新闻动态</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/hosnews.html">医院新闻</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/mtsd.html">媒体视点</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/yytg.html">医院公告</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/xmfyb.html">厦门妇幼保健报</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">医院文化</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/lqzsp.html">林巧稚生平</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/lqzgy.html">林巧稚格言</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/yyjs.html">医院精神</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/hxg.html">院徽?院训?院歌</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">医教科研</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/medical.html">医学教育</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/research.html">科学研究</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">党建园地</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/conduct.html">党风廉政</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/spirit.html">精神文明</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/home.html">职工之家</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/djjgfc.html">巾帼风采</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/youth.html">青春飞扬</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">护理园地</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/Nursingnews.html">护理动态</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/page/index/ch/Nursingcon.html">护理概况</a>
+            </div>
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/angel.html">天使风采</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/Nursingry.html">护理荣誉</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">健康知识</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/say.html">健康讲座</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/knowledge.html">健康知识</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">事务公开</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/public_dw.html">党务公开</a>
+            </div>
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/public.html">院务公开</a>
+            </div>
+          </div>
+        </div>
+        <div class="left rel" onmouseover="show_child(this,0);" onmouseout="show_child(this,1);">
+          <div class="li point b">患者心声</div>
+          <div class="abs ch-li fo-12 none">
+            <div class="ch-node b ch-none">
+              <a class="blk" hidefocus="true" href="http://www.xmfybj.cn/index.php/article/index/ch/message.html">感谢信</a>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--banner-->
+      <div class="banner width hid" style="height:255px;">
+        <img border="0" src="./网络预约挂号系统_files/门诊预约系统.jpg" width="1000px" height="255px">
+      </div>
+    </div>
+    <!--内容管理-->
+    <div class="cmain">
+      <div class="width auto">
+        <div class="hid ctop">
+          <div class="left lwidth bg-ff">
+            <!--预约查询-->
+            <div class="bod yy">
+              <div class="yytit b col-d9 fo-12">预约查询</div>
+              <div class="yyform">
+                <form action="http://yy.xmfybj.cn/query.asp" method="post" onsubmit="return appsearch();">
+                  <input name="icardid" id="icardid" type="text" class="s-txt s-rad" onclick="this.value=&#39;&#39;;" value="请填写卡号或身份证号">&nbsp;
+                  <input type="submit" class="s-btn col-ff point" value="查询">
+                </form>
+              </div>
+            </div>
+            <!--预约-->
+            <div class="bod" style="margin-bottom:8px;">
+              <div class="ftit b col-d9">科室 医生</div>
+              <div class="cancelf fo-12 col-d9" style="height:300px;overflow-y:auto;">
+                <div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(1,&quot;VIP&quot;,&quot;VIP&quot;)">VIP</a><ul id="opt_1" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=VIP&DOCTOR_CODE=1788" target="MainHome">何方方［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=VIP&DOCTOR_CODE=715" target="MainHome">郑天昕［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=VIP&DOCTOR_CODE=022V" target="MainHome">杨华［主任医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(2,&quot;2042&quot;,&quot;产后42天(产妇)/盆底疾病&quot;)">产后42天(产妇)/盆底疾病</a><ul id="opt_2" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2042&DOCTOR_CODE=100" target="MainHome">李凡［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2042&DOCTOR_CODE=1351" target="MainHome">曾金华［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2042&DOCTOR_CODE=270" target="MainHome">产后42天［未知］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(3,&quot;3303&quot;,&quot;产科建卡门诊&quot;)">产科建卡门诊</a><ul id="opt_3" style="display:none;"><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3303&DOCTOR_CODE=447" target="MainHome">建卡［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(4,&quot;330&quot;,&quot;产科门诊&quot;)">产科门诊</a><ul id="opt_4" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1678" target="MainHome">张碧黎［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=092" target="MainHome">钟红秀［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1137" target="MainHome">张雪芹［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=022" target="MainHome">杨华［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1334" target="MainHome">林开枝［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=873" target="MainHome">李丽榕［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1439" target="MainHome">王依静［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=9745" target="MainHome">黄秋云［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=919" target="MainHome">秦瑶［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1711" target="MainHome">赖幼琳［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=920" target="MainHome">朱启娟［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=281" target="MainHome">刘珺［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=085" target="MainHome">黄慧珍［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1599" target="MainHome">周莲［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=393" target="MainHome">徐慧群［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1127" target="MainHome">林雪燕［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=967" target="MainHome">刘英［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=167" target="MainHome">陈翠文［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1602" target="MainHome">林丽苹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=852" target="MainHome">郭琼［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1192" target="MainHome">田璐［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=113" target="MainHome">郑艳辉［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=305" target="MainHome">陈晓丹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=905" target="MainHome">黄志蓉［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=330&DOCTOR_CODE=1448" target="MainHome">朱长巍［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(5,&quot;322&quot;,&quot;产科门诊/产前诊断&quot;)">产科门诊/产前诊断</a><ul id="opt_5" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=158" target="MainHome">吴琦嫦［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=159" target="MainHome">孙丽［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=870" target="MainHome">于威威［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=1450" target="MainHome">田婕［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=353" target="MainHome">许亚松［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=355" target="MainHome">钟晓玲［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=403" target="MainHome">魏玮［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=572" target="MainHome">曹怡［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=322&DOCTOR_CODE=1448" target="MainHome">朱长巍［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(6,&quot;3304&quot;,&quot;产科孕前/早孕门诊&quot;)">产科孕前/早孕门诊</a><ul id="opt_6" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3304&DOCTOR_CODE=9745" target="MainHome">黄秋云［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3304&DOCTOR_CODE=281" target="MainHome">刘珺［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3304&DOCTOR_CODE=905" target="MainHome">黄志蓉［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3304&DOCTOR_CODE=852" target="MainHome">郭琼［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(7,&quot;103&quot;,&quot;儿科／新生儿科门诊&quot;)">儿科／新生儿科门诊</a><ul id="opt_7" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=282" target="MainHome">吴星东［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=879" target="MainHome">赖基栋［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=786" target="MainHome">郑直［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=102" target="MainHome">李雅丹［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=666" target="MainHome">林新祝［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=673" target="MainHome">彭桂兰［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=668" target="MainHome">沈彤［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1135" target="MainHome">汪秀蓉［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1489" target="MainHome">张丽芹［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=580" target="MainHome">谢辉［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=074" target="MainHome">欧阳长安［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1777" target="MainHome">张晓岚［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1134" target="MainHome">兰朝阳［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=368" target="MainHome">刘虹［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1143" target="MainHome">李银兰［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=121" target="MainHome">姚岭松［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=126" target="MainHome">傅美娇［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1610" target="MainHome">田越英［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=795" target="MainHome">胡恕香［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=123" target="MainHome">梁洪［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1619" target="MainHome">李岩［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1139" target="MainHome">朱新宇［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1593" target="MainHome">郭文兴［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1604" target="MainHome">陆妹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1605" target="MainHome">董鸿捌［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1280" target="MainHome">杨晓庆［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=831" target="MainHome">王央丹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=950" target="MainHome">蔡淑英［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=911" target="MainHome">张慧芬［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=957" target="MainHome">蔡慧强［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=474" target="MainHome">阳韬［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=366" target="MainHome">黄荔涵［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1195" target="MainHome">林雅璇［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=975" target="MainHome">杨莹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=7602" target="MainHome">黄种钦［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1595" target="MainHome">连清荣［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1275" target="MainHome">钟立霖［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1130" target="MainHome">林宝花［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1522" target="MainHome">张端秀［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1350" target="MainHome">陈文丰［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1239" target="MainHome">林嘉衍［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1656" target="MainHome">丁燕霞［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=103&DOCTOR_CODE=1655" target="MainHome">陈云娥［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(8,&quot;1042&quot;,&quot;儿童保健门诊(含体检)&quot;)">儿童保健门诊(含体检)</a><ul id="opt_8" style="display:none;"><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=252" target="MainHome">陈晶［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=785" target="MainHome">张继永［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=363" target="MainHome">史俊霞［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=1272" target="MainHome">黄蓉［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=1628" target="MainHome">林燕燕［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=1652" target="MainHome">谷松磊［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=1524" target="MainHome">陈筱铮［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=1432" target="MainHome">胡超英［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1042&DOCTOR_CODE=848" target="MainHome">蔡鹭香［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(9,&quot;104&quot;,&quot;儿童保健专家门诊&quot;)">儿童保健专家门诊</a><ul id="opt_9" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=104&DOCTOR_CODE=030" target="MainHome">曾国章［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=104&DOCTOR_CODE=025" target="MainHome">许立军［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=104&DOCTOR_CODE=021" target="MainHome">王小林［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=104&DOCTOR_CODE=067" target="MainHome">陈桂霞［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=104&DOCTOR_CODE=026" target="MainHome">黄海莹［副主任医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(10,&quot;106&quot;,&quot;儿童发育行为/市自闭症中心&quot;)">儿童发育行为/市自闭症中心</a><ul id="opt_10" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=1068" target="MainHome">谭剑辉［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=021" target="MainHome">王小林［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=601" target="MainHome">张谦［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=386" target="MainHome">张娟［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=379" target="MainHome">刘文龙［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=106&DOCTOR_CODE=370" target="MainHome">王真真［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(11,&quot;105&quot;,&quot;耳鼻咽喉科&quot;)">耳鼻咽喉科</a><ul id="opt_11" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=105&DOCTOR_CODE=893" target="MainHome">刘生荣［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=105&DOCTOR_CODE=1036" target="MainHome">张国旺［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=105&DOCTOR_CODE=1451" target="MainHome">阳海林［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(12,&quot;3201&quot;,&quot;妇科(中医)/男科(中医)&quot;)">妇科(中医)/男科(中医)</a><ul id="opt_12" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3201&DOCTOR_CODE=700" target="MainHome">梁燕［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3201&DOCTOR_CODE=183" target="MainHome">吴丽丽［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3201&DOCTOR_CODE=251" target="MainHome">欧阳洪根［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3201&DOCTOR_CODE=1622" target="MainHome">曾琼连［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(13,&quot;3203&quot;,&quot;妇科/更年期门诊&quot;)">妇科/更年期门诊</a><ul id="opt_13" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3203&DOCTOR_CODE=040" target="MainHome">吴冬梅［副主任医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(14,&quot;320&quot;,&quot;妇科/宫颈疾病门诊&quot;)">妇科/宫颈疾病门诊</a><ul id="opt_14" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=083" target="MainHome">李清［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=716" target="MainHome">李卓艺［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=040" target="MainHome">吴冬梅［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=351" target="MainHome">柯珣瑜［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=722" target="MainHome">沈晓玲［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=064" target="MainHome">郝松茹［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=320&DOCTOR_CODE=1167" target="MainHome">张艳［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(15,&quot;321&quot;,&quot;妇科门诊&quot;)">妇科门诊</a><ul id="opt_15" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1141" target="MainHome">邓国义［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1668" target="MainHome">苏志英［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1788" target="MainHome">何方方［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=518" target="MainHome">王彦龙［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=930" target="MainHome">谢红斌［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=873" target="MainHome">李丽榕［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=10001" target="MainHome">郭素清［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1144" target="MainHome">骆亚平［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=283" target="MainHome">赵梅［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1136" target="MainHome">金娟娟［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=246" target="MainHome">刘红丽［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1674" target="MainHome">肖茜［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=992" target="MainHome">于鹏［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=042" target="MainHome">曹雅琴［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=394" target="MainHome">陈瑞欣［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1132" target="MainHome">康份红［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=354" target="MainHome">张丽莉［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1673" target="MainHome">辛路平［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1270" target="MainHome">赖海清［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1250" target="MainHome">李淡虹［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1129" target="MainHome">柳志民［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1242" target="MainHome">王燕［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=321&DOCTOR_CODE=1521" target="MainHome">蔡婕［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(16,&quot;202&quot;,&quot;计划生育门诊(孕前/早孕检查)&quot;)">计划生育门诊(孕前/早孕检查)</a><ul id="opt_16" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=1040" target="MainHome">陈珠娇［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=020" target="MainHome">柴冬宁［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=9477" target="MainHome">沈玉萍［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=1293" target="MainHome">汪文荣［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=897" target="MainHome">胡美英［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=951" target="MainHome">罗振宇［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=202&DOCTOR_CODE=155" target="MainHome">庄玲玲［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(17,&quot;102&quot;,&quot;口腔科&quot;)">口腔科</a><ul id="opt_17" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=102&DOCTOR_CODE=028" target="MainHome">徐美玉［副主任医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=102&DOCTOR_CODE=1646" target="MainHome">黄大维［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=102&DOCTOR_CODE=1379" target="MainHome">王清泰［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(18,&quot;2041&quot;,&quot;内科门诊&quot;)">内科门诊</a><ul id="opt_18" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2041&DOCTOR_CODE=481" target="MainHome">连铭锋［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2041&DOCTOR_CODE=1094" target="MainHome">郑雪萍［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2041&DOCTOR_CODE=1591" target="MainHome">汤东杰［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(19,&quot;2043&quot;,&quot;盆底治疗&quot;)">盆底治疗</a><ul id="opt_19" style="display:none;"><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P001" target="MainHome">盆底治疗1［未知］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P002" target="MainHome">盆底治疗2［未知］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P006" target="MainHome">盆底治疗6［未知］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P004" target="MainHome">盆底治疗4［未知］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P005" target="MainHome">盆底治疗5［未知］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2043&DOCTOR_CODE=P003" target="MainHome">盆底治疗3［未知］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(20,&quot;1041&quot;,&quot;皮肤科门诊&quot;)">皮肤科门诊</a><ul id="opt_20" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1041&DOCTOR_CODE=681" target="MainHome">王立群［副主任医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1041&DOCTOR_CODE=1654" target="MainHome">蔡治慧［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(21,&quot;3204&quot;,&quot;青春期门诊&quot;)">青春期门诊</a><ul id="opt_21" style="display:none;"><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3204&DOCTOR_CODE=351" target="MainHome">柯珣瑜［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(22,&quot;203&quot;,&quot;乳腺门诊&quot;)">乳腺门诊</a><ul id="opt_22" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1462" target="MainHome">陈永浙［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=010" target="MainHome">钱浩勇［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=247" target="MainHome">朱瞻琳［副主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=111" target="MainHome">郭巨江［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1775" target="MainHome">蒋新宇［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1387" target="MainHome">陈旭明［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1096" target="MainHome">林菊丽［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=682" target="MainHome">廖洪叶［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=553" target="MainHome">李瑞香［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1303" target="MainHome">毛贺辉［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=203&DOCTOR_CODE=1566" target="MainHome">翁一尹［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(23,&quot;112&quot;,&quot;生殖医学/生殖男科&quot;)">生殖医学/生殖男科</a><ul id="opt_23" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1788" target="MainHome">何方方［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=088" target="MainHome">李健［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1668" target="MainHome">苏志英［主任医师］</a></li><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1332" target="MainHome">李萍［主任医师］</a></li><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=628" target="MainHome">林津［副主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=988" target="MainHome">张玲［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1290" target="MainHome">何雪梅［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=449" target="MainHome">沙艳伟［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1681" target="MainHome">陈静［医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=112&DOCTOR_CODE=1389" target="MainHome">施迎迎［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(24,&quot;204&quot;,&quot;体检中心&quot;)">体检中心</a><ul id="opt_24" style="display:none;"></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(25,&quot;1032&quot;,&quot;小儿骨科&quot;)">小儿骨科</a><ul id="opt_25" style="display:none;"><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1032&DOCTOR_CODE=1614" target="MainHome">冯林［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(26,&quot;1031&quot;,&quot;小儿外科门诊&quot;)">小儿外科门诊</a><ul id="opt_26" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1031&DOCTOR_CODE=1211" target="MainHome">徐延波［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1031&DOCTOR_CODE=1121" target="MainHome">胡杨［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1031&DOCTOR_CODE=387" target="MainHome">黄国显［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1031&DOCTOR_CODE=571" target="MainHome">陈海琛［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1031&DOCTOR_CODE=933" target="MainHome">唐宜莘［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(27,&quot;3202&quot;,&quot;心理卫生门诊(成人/儿童)&quot;)">心理卫生门诊(成人/儿童)</a><ul id="opt_27" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3202&DOCTOR_CODE=1068" target="MainHome">谭剑辉［主任医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(28,&quot;1051&quot;,&quot;眼科&quot;)">眼科</a><ul id="opt_28" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1051&DOCTOR_CODE=516" target="MainHome">熊永强［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1051&DOCTOR_CODE=1776" target="MainHome">林春堤［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1051&DOCTOR_CODE=451" target="MainHome">吕月娥［主治医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1051&DOCTOR_CODE=1589" target="MainHome">童林利［主治医师］</a></li><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=1051&DOCTOR_CODE=1374" target="MainHome">林琳［医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(29,&quot;2021&quot;,&quot;医疗美容科&quot;)">医疗美容科</a><ul id="opt_29" style="display:none;"><li><a class="col-c1" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2021&DOCTOR_CODE=608" target="MainHome">郭耐强［主任医师］</a></li><li><a class="col-c3" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=2021&DOCTOR_CODE=1295" target="MainHome">俞积贵［主治医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(30,&quot;3301&quot;,&quot;遗传咨询/产前筛查门诊&quot;)">遗传咨询/产前筛查门诊</a><ul id="opt_30" style="display:none;"><li><a class="col-c2" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3301&DOCTOR_CODE=1291" target="MainHome">肖云山［副主任医师］</a></li></ul></div><div class="bodyleftlistda"><a href="./网络预约挂号系统_files/网络预约挂号系统.html" class="stit col-d9" onclick="downup(31,&quot;3302&quot;,&quot;营养室&quot;)">营养室</a><ul id="opt_31" style="display:none;"><li><a class="col-c4" href="http://yy.xmfybj.cn/doctor.asp?DEPT_CODE=3302&DOCTOR_CODE=Y001" target="MainHome">营养门诊［未知］</a></li></ul></div>
+              </div>
+            </div>
+            <!--预约取消-->
+            <div class="bod">
+              <div class="ftit b col-d9">预约取消</div>
+              <div class="cancelf">
+                <form action="http://yy.xmfybj.cn/AppointCancel.asp" method="post" onsubmit="return appcancel();">
+                  <div><input name="icardid" id="icardid2" class="s-txt s-rad" onclick="this.value=&#39;&#39;" value="请填写卡号或身份证号" type="text"></div>
+                  <div><input name="username" id="username" class="s-txt s-rad" onclick="this.value=&#39;&#39;" value="请填写预约医生姓名" type="text"></div>
+                  <div>
+                    <select id="weekday" name="weekday" style="margin:4px 0px 3px 0px;width:156px;">
+                      <option selected="" value="">=请选择预约日期=</option>
+                      <option value="2015-10-16">2015-10-16</option><option value="2015-10-17">2015-10-17</option><option value="2015-10-18">2015-10-18</option><option value="2015-10-19">2015-10-19</option><option value="2015-10-20">2015-10-20</option><option value="2015-10-21">2015-10-21</option><option value="2015-10-22">2015-10-22</option><option value="2015-10-23">2015-10-23</option></select>
+                  </div>
+                  <div><input name="" value="确 定" class="s-btn col-ff point" type="submit"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="right bg-ff">
+            <!--预约查询-->
+            <div class="bod">
+              <iframe frameborder="0" name="MainHome" src="./网络预约挂号系统_files/apptime.html" width="788px" style="height:628px;*height:636px;"></iframe>
+              <!--<iframe frameborder="0" name="MainHome" src="know.html" width="788px" onload="this.height=this.contentWindow.document.documentElement.scrollHeight" height="624px"></iframe>//-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--底部栏-->
+    <div class="footer t-cen fo-12" style="margin-top:-108px;">
+      <div class="ft-pad" style="margin-bottom:5px">
+        <div>通信地址：厦门市镇海路10号(邮政编码：361003)</div>
+        <div>电话：0592-2662020　　E_mail:xmfybj@163.com</div>
+        <div>版权所有: 厦门市妇幼保健院   <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备07060079号</a></div>
+      </div>
+    </div>
+  </div><!--end of class main-->
+
+</body></html>
