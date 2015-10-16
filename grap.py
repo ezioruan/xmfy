@@ -2,7 +2,7 @@
 # coding=utf-8
 """
 Filename:       grap.py
-Last modified:  2015-10-16 15:39
+Last modified:  2015-10-16 15:43
 
 Description:
 
@@ -24,9 +24,7 @@ def save_file(data, file_name):
 
 
 def clean_text(text):
-    print 'text', text
     new_text = text.replace(')', '').replace('"', '')
-    print 'new_text', new_text
     return new_text
 
 
@@ -51,7 +49,6 @@ def grap_doctors():
                 'dept_code': clean_text(dept_code),
                 'dept_name': clean_text(dept_name),
             })
-        print depts
         save_file(doctors, 'doctors.json')
         save_file(depts, 'depts.json')
 

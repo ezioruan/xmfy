@@ -2,7 +2,7 @@
 # coding=utf-8
 """
 Filename:       captcha.py
-Last modified:  2015-10-14 15:48
+Last modified:  2015-10-16 16:46
 
 Description:
 
@@ -16,7 +16,7 @@ import setting
 from StringIO import StringIO
 
 
-class Captcha:
+class Captcha(object):
 
     def __init__(self):
         self.imglib = {}
