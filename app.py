@@ -2,13 +2,13 @@
 # coding=utf-8
 """
 Filename:       app.py
-Last modified:  2015-10-16 16:48
+Last modified:  2015-10-16 16:51
 
 Description:
 
 """
 from setting import HTTP_HOST, HTTP_PORT
-from flask import Flask 
+from flask import Flask
 import json
 from gevent.pywsgi import WSGIServer
 from data import data_manager
@@ -19,11 +19,13 @@ app = Flask(__name__)
 
 @app.route('/doctors/<dept_code>')
 def doctors_by_dept_code(dept_code):
-    return json.dumps(data_manager.doctors)
+    print 'doctors_by_dept_code'
+    return json.dumps(data_manager.get_doctors(dept_code))
 
 
-@app.route('/doctors')
+@app.route('/doctors/')
 def doctors():
+    print 'doctors'
     return json.dumps(data_manager.doctors)
 
 
